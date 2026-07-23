@@ -8,14 +8,38 @@
   </head>
   <body>
     <main class="shell">
-      <header>
-        <div class="brand"><b>M</b> 萬芳媒創通 WF MediaFlow</div>
-        <p class="eyebrow">多媒體製作申請與進度管理平台</p>
-        <h1>萬芳媒創通<br />WF MediaFlow</h1>
-        <p>請完整填寫需求；送出後，我們將以 Email 或手機與您確認製作細節。</p>
+      <header class="hero">
+        <div class="hero-copy">
+          <div class="brand"><b>M</b> 萬芳媒創通 WF MediaFlow</div>
+          <p class="eyebrow">多媒體製作申請與進度管理平台</p>
+          <h1>把每個想法，<br /><em>清楚地做成作品。</em></h1>
+          <p>從平面設計、列印輸出到影像拍攝，集中提出製作需求，讓每一個專案都有清楚的進度與交付。</p>
+          <a class="hero-action" href="#request">開始填寫申請 <span>↓</span></a>
+        </div>
+        <img class="hero-art" src="assets/mediaflow-hero.png" alt="相機、影像剪輯與設計印刷素材的多媒體製作插圖" />
       </header>
 
-      <form id="form">
+      <section class="service-overview">
+        <div class="section-label">我們能協助你</div>
+        <h2>一份申請，串起各種製作服務</h2>
+        <div class="service-cards">
+          <article><span>✦</span><h3>視覺設計</h3><p>平面設計、照片修圖與圖文排版。</p></article>
+          <article><span>▣</span><h3>專業輸出</h3><p>一般列印、大片輸出與照片列印。</p></article>
+          <article><span>◉</span><h3>影像製作</h3><p>動態錄影、平面攝影與後製需求。</p></article>
+          <article><span>↗</span><h3>數位交付</h3><p>提供原始檔、完成檔與後續確認。</p></article>
+        </div>
+      </section>
+
+      <section class="journey">
+        <div><p class="section-label">申請流程</p><h2>簡單三步驟，讓需求不再失聯</h2></div>
+        <ol>
+          <li><b>01</b><div><h3>提出需求</h3><p>填寫服務項目、規格與預計使用日期。</p></div></li>
+          <li><b>02</b><div><h3>中心確認</h3><p>承辦人確認內容、交期與所需補件。</p></div></li>
+          <li><b>03</b><div><h3>完成交付</h3><p>收到通知後，下載檔案或安排取件。</p></div></li>
+        </ol>
+      </section>
+
+      <form id="form" class="request-form">
         <section>
           <h2><span>01</span>申請人資料</h2>
           <p>我們會透過以下方式與您聯繫。</p>
@@ -89,6 +113,13 @@
           <button>送出製作申請 →</button>
         </footer>
       </form>
+
+      <section class="status-demo">
+        <div><p class="section-label">案件進度示範</p><h2>每個製作任務，都有清楚的下一步</h2><p>正式版可用案件編號查詢進度、補件通知與完成檔案；目前先以此畫面展示服務流程。</p></div>
+        <div class="status-card"><div class="status-top"><span>WF-2026-00128</span><em>製作中</em></div><h3>招生說明會主視覺與海報</h3><p>平面設計・A3 輸出・聯絡人：王小明</p><div class="progress"><span class="done">已送出</span><i></i><span class="active">製作中</span><i></i><span>完成交付</span></div><small>預計完成：2026 / 08 / 25</small></div>
+      </section>
+
+      <section class="faq"><div><p class="section-label">常見問題</p><h2>申請前先看看</h2></div><div class="faq-list"><details open><summary>多久前要提出申請？</summary><p>建議一般案件至少預留 5 個工作天；大型輸出、拍攝或多項服務請預留更充足時間。</p></details><details><summary>可以上傳哪些檔案？</summary><p>正式版將支援 PDF、Word、PowerPoint、圖片與壓縮檔等常用格式。</p></details><details><summary>急件怎麼處理？</summary><p>請在需求說明中註明使用日期，中心將依現有排程與製作可行性回覆。</p></details></div></section>
 
       <section id="done" hidden>
         <b>✓</b>
