@@ -1,2 +1,51 @@
-const boxes=[...document.querySelectorAll('.services input')],specs=document.querySelector('#specs'),step=document.querySelector('#step'),form=document.querySelector('#form'),done=document.querySelector('#done'),warning=document.querySelector('#warning');
-function refresh(){const selected=boxes.some(x=>x.checked),needs=boxes.some(x=>x.checked&&['平面設計','照片修圖','圖文排版'].includes(x.value));specs.hidden=!needs;step.textContent=needs?'04':'03';boxes.forEach(x=>x.parentElement.classList.toggle('selected',x.checked));return selected}boxes.forEach(x=>x.addEventListener('change',refresh));form.addEventListener('submit',e=>{e.preventDefault();if(!refresh()){warning.hidden=false;return}warning.hidden=true;form.hidden=true;done.hidden=false;scrollTo({top:0,behavior:'smooth'})});document.querySelector('#again').onclick=()=>{form.reset();done.hidden=true;form.hidden=false;refresh()};refresh();
+const serviceInputs = [...document.querySelectorAll(".services input")];
+const specsSection = document.querySelector("#specs");
+const notesStep = document.querySelector("#step");
+const requestForm = document.querySelector("#form");
+const completeSection = document.querySelector("#done");
+const warning = document.querySelector("#warning");
+
+const servicesRequiringOutputSpecs = ["平面設計", "照片修圖", "圖文排版"];
+
+function refreshServiceOptions() {
+  const hasSelectedService = serviceInputs.some((input) => input.checked);
+  const showOutputSpecs = serviceInputs.some(
+    (input) => input.checked && servicesRequiringOutputSpecs.includes(input.value),
+  );
+
+  specsSection.hidden = !showOutputSpecs;
+  notesStep.textContent = showOutputSpecs ? "04" : "03";
+
+  serviceInputs.forEach((input) => {
+    input.parentElement.classList.toggle("selected", input.checked);
+  });
+
+  return hasSelectedService;
+}
+
+serviceInputs.forEach((input) => {
+  input.addEventListener("change", refreshServiceOptions);
+});
+
+requestForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (!refreshServiceOptions()) {
+    warning.hidden = false;
+    return;
+  }
+
+  warning.hidden = true;
+  requestForm.hidden = true;
+  completeSection.hidden = false;
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+document.querySelector("#again").addEventListener("click", () => {
+  requestForm.reset();
+  completeSection.hidden = true;
+  requestForm.hidden = false;
+  refreshServiceOptions();
+});
+
+refreshServiceOptions();
